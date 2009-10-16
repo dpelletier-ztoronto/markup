@@ -8,10 +8,9 @@ Markup is a small (ie tiny) command line tool for converting Markdown to HTML.
 
 ## Usage
 
-	$ cd ~/projects/markup && ls
-	$ LICENSE  README.markdown  Rakefile  VERSION  bin  lib  markup.gemspec  test
 	$ markup README.markdown
 	Created README.html
+
 	$ cat README.html
 	<h1>markup</h1>
 	
