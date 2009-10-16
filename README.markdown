@@ -19,7 +19,7 @@ Markup is a small (ie tiny) command line tool for converting Markdown to HTML.
 
 ## Options
 
-By default markup outputs to {sourcefile_name}.html, but you can specify a different filename using the -o option:
+By default markup outputs to {source_file_name}.html, but you can specify a different filename using the -o option:
 
 	$ markup README.markdown -o instructions.html
 	
