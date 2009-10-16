@@ -6,7 +6,7 @@ Markup is a small (ie tiny) command line tool for converting Markdown to HTML.
 
 	$ sudo gem install markup --source http://gemcutter.org
 
-## Usages
+## Usage
 
 	$ cd ~/projects/markup && ls
 	$ LICENSE  README.markdown  Rakefile  VERSION  bin  lib  markup.gemspec  test
