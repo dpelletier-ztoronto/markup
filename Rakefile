@@ -14,6 +14,7 @@ begin
     
     gem.files       = Dir['lib/**/*'] + Dir['bin/*']
     gem.executables << 'markup'
+    gem.add_dependency 'rdiscount', '>= 1.3.5'
     
     gem.add_development_dependency "thoughtbot-shoulda"
     gem.add_development_dependency "redgreen"
