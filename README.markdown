@@ -2,10 +2,6 @@
 
 Markup is a small (ie tiny) command line tool for converting Markdown to HTML.
 
-## Installation
-
-	$ sudo gem install markup --source http://gemcutter.org
-
 ## Usage
 
 	$ markup README.markdown
@@ -15,12 +11,19 @@ Markup is a small (ie tiny) command line tool for converting Markdown to HTML.
 	<h1>markup</h1>
 	
 	<p>Markup is a small.... etc
-	
+
+## Installation
+
+	$ sudo gem install markup --source http://gemcutter.org
+
+
+## Options
+
 By default markup outputs to {sourcefile_name}.html, but you can specify a different filename using the -o option:
 
 	$ markup README.markdown -o instructions.html
 	
-Overwrite existing output using the -F option (this will clobber existing files so be careful):
+Overwrite an existing output file using the -F option (this will clobber existing files so be careful):
 
 	$ markup README.markdown -F
 
