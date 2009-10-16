@@ -3,6 +3,8 @@ require 'rake'
 
 begin
   require 'jeweler'
+  require 'jeweler/gemcutter_tasks'
+
   Jeweler::Tasks.new do |gem|
     gem.name        = "markup"
     gem.summary     = %Q{Command line Markdown-to-HTML conversion}
@@ -16,10 +18,12 @@ begin
     gem.executables << 'markup'
     gem.add_dependency 'rdiscount', '>= 1.3.5'
     
-    gem.add_development_dependency "thoughtbot-shoulda"
-    gem.add_development_dependency "redgreen"
+    gem.add_development_dependency "thoughtbot-shoulda", '>= 2.10.2'
+    gem.add_development_dependency "redgreen", '>= 1.2.2'
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
+
+  Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
 end
