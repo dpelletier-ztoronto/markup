@@ -4,13 +4,19 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "markup"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
-    gem.email = "james@jameswilding.net"
-    gem.homepage = "http://github.com/jameswilding/markup"
-    gem.authors = ["James Wilding"]
+    gem.name        = "markup"
+    gem.summary     = %Q{Command line Markdown-to-HTML conversion}
+    gem.description = %Q{Small command line tool that reads Markdown files and outputs HTML}
+    
+    gem.email       = "james@jameswilding.net"
+    gem.homepage    = "http://github.com/jameswilding/markup"
+    gem.authors     = ["James Wilding"]
+    
+    gem.files       = Dir['lib/**/*'] + Dir['bin/*']
+    gem.executables << 'markup'
+    
     gem.add_development_dependency "thoughtbot-shoulda"
+    gem.add_development_dependency "redgreen"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 rescue LoadError
@@ -37,7 +43,7 @@ rescue LoadError
   end
 end
 
-task :test => :check_dependencies
+task :test
 
 task :default => :test
 

@@ -1,0 +1,45 @@
+#!/usr/bin/env ruby
+require 'optparse'
+
+# Command line tool for producing HTML from Markdown files. 
+# Requires rubygems and RDiscount (gem install rdiscount).
+#
+# Usage: markup source_file.markdown [-o output_file] [-F]
+#
+# For help, use markup --help
+
+options = {}
+script  = File.basename($0) 
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: #{script} source_file [options]"
+  
+  opts.on '-o', '--output', 'Output file [FILE]' do |file|
+    options[:output] = file
+  end
+  
+  opts.on '-F', '--force', 'Overwrite output file' do |force|
+    options[:force] = force
+  end
+end.parse!
+
+unless input = ARGV.first
+  puts "Please specify a source file"
+  exit 1
+end
+
+begin
+  require 'rubygems'
+  require File.dirname(__FILE__) + '/../lib/markup'
+  
+  runner = Markup::Runner.new(input, options)
+  output = runner.output_filename
+
+  runner.generate_html!
+rescue Markup::Runner::OutputExists
+  puts "Output file #{output} exists: use #{script} -o to specify another"
+  exit 1
+else
+  puts "Created #{output}"
+  exit 0
+end
