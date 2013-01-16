@@ -24,7 +24,7 @@ module Markup
     
     private
     def html_output
-      '<body>' + RDiscount.new(File.read(@source)).to_html + '<body>'
+      '<body>' + RDiscount.new(File.read(@source)).to_html + '</body>'
     end
     
     def output_file_exists?
