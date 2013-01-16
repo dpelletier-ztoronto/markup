@@ -14,8 +14,9 @@ Markup is a small (ie tiny) command line tool for converting Markdown to HTML.
 
 ## Installation
 
-	$ sudo gem install markup --source http://gemcutter.org
-
+	$ wget https://github.com/dpelletier-ztoronto/markup/blob/master/markup-0.1.3.gem?raw=true
+	$ sudo gem install markup
+	$ rm -rf markup-0.1.3.gem\?raw\=true
 
 ## Options
 
